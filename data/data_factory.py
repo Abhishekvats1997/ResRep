@@ -70,7 +70,7 @@ def create_dataset(dataset_name, subset, global_batch_size, distributed):
     elif dataset_name == 'cifar10':
         assert not distributed
         if subset == 'train':
-            return InfiniteDataLoader(datasets.CIFAR10(CIFAR10_PATH, train=True, download=False,
+            return InfiniteDataLoader(datasets.CIFAR10(CIFAR10_PATH, train=True, download=True,
                                transform=transforms.Compose([
                                    transforms.Pad(padding=(4, 4, 4, 4)),
                                    transforms.RandomCrop(32),
